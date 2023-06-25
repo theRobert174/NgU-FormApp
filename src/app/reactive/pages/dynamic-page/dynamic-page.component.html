@@ -23,10 +23,12 @@
 
             <div class="input-group">
                 <input class="form-control"
+                        [formControl]="newFavorite"
                        placeholder="Agregar favorito">
 
 
                 <button class="btn btn-outline-primary"
+                        (click)="onAddToFavorites()"
                         type="button">
                     Agregar favorito
                 </button>
@@ -87,5 +89,5 @@
 <br>
 
 <span>Agregar Juego</span>
-<pre>{{ 'object' | json }}</pre>
-<pre>{{ 'object' | json }}</pre>
+<pre>{{ newFavorite.valid | json }}</pre>
+<pre>{{ newFavorite.value | json }}</pre>
