@@ -16,6 +16,11 @@ export class RegisterPageComponent {
     username: ['', [Validators.required, this.validatorsService.cantBeStrider]],
     password: ['', [Validators.required, Validators.minLength(6)]],
     matchpass: ['', [Validators.required]],
+  },
+  {
+    validators: [
+      this.validatorsService.isFieldOneEqualFieldTwo('password', 'matchpass')
+    ]
   });
 
   constructor( private fb : FormBuilder, private validatorsService : ValidatorsService, private emailValidator: EmailValidatorService ) { }
